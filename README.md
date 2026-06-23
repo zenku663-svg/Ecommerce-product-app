@@ -1,40 +1,81 @@
 # 🛒 E-Commerce Product Application
 
-A full-stack MERN (MongoDB, Express.js, React.js, Node.js) e-commerce application with user authentication, shopping cart functionality, product management, and an admin dashboard.
+A full-stack MERN (MongoDB, Express.js, React.js, Node.js) E-Commerce Product Application developed with modern web technologies. The application provides secure user authentication, product management, shopping cart functionality, and an admin dashboard for managing products.
 
 ---
 
-## 🚀 Features
+## 🚀 Live Project
 
-### User Features
+### Frontend (Vercel)
+
+https://ecommerce-product-app-nu.vercel.app/
+
+### Backend (Render)
+
+https://ecommerce-product-app.onrender.com
+
+### GitHub Repository
+
+https://github.com/zenku663-svg/Taskly-mern.git
+
+---
+
+# 📖 Project Overview
+
+This application allows users to browse products, search and filter items, view product details, add products to a shopping cart, and manage their accounts securely.
+
+Administrators can manage products through a protected admin dashboard with full CRUD (Create, Read, Update, Delete) functionality.
+
+---
+
+# ✨ Features
+
+## 👤 User Features
 
 * User Registration
-* User Login & Logout
+* User Login
+* User Logout
 * JWT Authentication
 * Protected User Profile
-* Browse Products
+* Product Listing
+* Product Search
+* Product Filtering by Category
 * Product Details Page
-* Search Products
-* Category Filtering
-* Add to Cart
-* Remove from Cart
+* Add Products to Cart
 * Update Cart Quantity
-* Checkout Authentication
+* Remove Products from Cart
+* Secure Checkout Validation
 
-### Admin Features
+---
+
+## 🛠️ Admin Features
 
 * Admin Login
 * Protected Admin Dashboard
-* Add Products
-* Edit Products
+* Add New Products
+* Edit Existing Products
 * Delete Products
-* Product Management
+* Manage Product Inventory
+* View Product Catalog
 
 ---
 
-## 🛠️ Tech Stack
+# 🔐 Authentication & Security
 
-### Frontend
+The application implements:
+
+* JWT (JSON Web Token) Authentication
+* Protected Routes
+* Admin Authorization
+* Password Hashing using bcryptjs
+* Secure API Communication
+* MongoDB Database Integration
+
+---
+
+# 🏗️ Tech Stack
+
+## Frontend
 
 * React.js
 * Vite
@@ -42,8 +83,9 @@ A full-stack MERN (MongoDB, Express.js, React.js, Node.js) e-commerce applicatio
 * Axios
 * React Router DOM
 * Framer Motion
+* Context API
 
-### Backend
+## Backend
 
 * Node.js
 * Express.js
@@ -51,53 +93,66 @@ A full-stack MERN (MongoDB, Express.js, React.js, Node.js) e-commerce applicatio
 * Mongoose
 * JWT Authentication
 * bcryptjs
+* CORS
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```text
 Ecommerce-App
 │
 ├── backend
 │   ├── controllers
+│   ├── middleware
 │   ├── models
 │   ├── routes
-│   ├── middleware
 │   ├── server.js
+│   ├── package.json
 │   └── .env
 │
 ├── frontend
 │   ├── src
-│   ├── components
-│   ├── pages
-│   ├── context
-│   └── api
+│   │   ├── api
+│   │   ├── components
+│   │   ├── context
+│   │   ├── pages
+│   │   └── assets
+│   │
+│   ├── package.json
+│   └── vite.config.js
 │
 └── README.md
 ```
 
 ---
 
-## ⚙️ Installation
+# ⚙️ Installation Guide
 
-### Clone Repository
+## Clone Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-cd Ecommerce-App
+git clone https://github.com/zenku663-svg/Taskly-mern.git
+cd Taskly-mern
 ```
 
 ---
 
-### Backend Setup
+## Backend Setup
+
+Navigate to backend folder:
 
 ```bash
 cd backend
+```
+
+Install dependencies:
+
+```bash
 npm install
 ```
 
-Create `.env`
+Create a `.env` file:
 
 ```env
 MONGO_URI=your_mongodb_connection_string
@@ -105,7 +160,7 @@ JWT_SECRET=your_secret_key
 PORT=5000
 ```
 
-Run Backend
+Run backend:
 
 ```bash
 npm run dev
@@ -113,20 +168,27 @@ npm run dev
 
 ---
 
-### Frontend Setup
+## Frontend Setup
+
+Navigate to frontend folder:
 
 ```bash
 cd frontend
+```
+
+Install dependencies:
+
+```bash
 npm install
 ```
 
-Create `.env`
+Create `.env` file:
 
 ```env
 VITE_API_URL=http://localhost:5000/api
 ```
 
-Run Frontend
+Run frontend:
 
 ```bash
 npm run dev
@@ -134,56 +196,151 @@ npm run dev
 
 ---
 
-## 🔐 Authentication
+# 🌐 Deployment
 
-This application uses:
+## Backend Deployment
 
+Platform: Render
+
+Backend URL:
+
+https://ecommerce-product-app.onrender.com
+
+---
+
+## Frontend Deployment
+
+Platform: Vercel
+
+Frontend URL:
+
+https://ecommerce-product-app-nu.vercel.app/
+
+---
+
+# 📌 API Endpoints
+
+## User Routes
+
+| Method | Endpoint            | Description      |
+| ------ | ------------------- | ---------------- |
+| POST   | /api/users/register | Register User    |
+| POST   | /api/users/login    | Login User       |
+| GET    | /api/users/profile  | Get User Profile |
+
+---
+
+## Product Routes
+
+| Method | Endpoint          | Description         |
+| ------ | ----------------- | ------------------- |
+| GET    | /api/products     | Get All Products    |
+| GET    | /api/products/:id | Get Product Details |
+| POST   | /api/products     | Add Product         |
+| PUT    | /api/products/:id | Update Product      |
+| DELETE | /api/products/:id | Delete Product      |
+
+---
+
+# 🛒 Shopping Cart Functionalities
+
+* Add Product to Cart
+* Remove Product from Cart
+* Update Product Quantity
+* Calculate Total Price
+* Cart Persistence using Local Storage
+
+---
+
+# 📊 Core Functionalities
+
+## Customer
+
+✔ Register Account
+
+✔ Login
+
+✔ Logout
+
+✔ Browse Products
+
+✔ Search Products
+
+✔ Filter Products
+
+✔ View Product Details
+
+✔ Add to Cart
+
+✔ Update Cart
+
+✔ Remove from Cart
+
+✔ Access Protected Profile
+
+---
+
+## Administrator
+
+✔ Login as Admin
+
+✔ Access Admin Dashboard
+
+✔ Add Products
+
+✔ Edit Products
+
+✔ Delete Products
+
+✔ Manage Product Inventory
+
+---
+
+# 🎯 Learning Outcomes
+
+This project demonstrates:
+
+* Full-Stack MERN Development
+* REST API Development
 * JWT Authentication
-* Protected Routes
+* MongoDB Database Integration
+* React State Management
+* Context API Usage
+* Route Protection
 * Admin Authorization
-* Secure Password Hashing using bcryptjs
+* Deployment using Render and Vercel
 
 ---
 
-## 🌐 Live Deployment
+# 👨‍💻 Author
 
-### Frontend
+Zenku
 
-Add your Vercel URL here:
+Developed as a Full Stack MERN E-Commerce Application.
 
-```text
-https://your-project.vercel.app
-```
+Technologies Used:
 
-### Backend
-
-Add your Render URL here:
-
-```text
-https://your-backend.onrender.com
-```
+* MongoDB
+* Express.js
+* React.js
+* Node.js
 
 ---
 
-## 📸 Screenshots
+# ⭐ Project Status
 
-Add screenshots of:
+✅ Completed
 
-* Home Page
-* Login Page
-* Register Page
-* Product Details
-* Cart Page
-* Admin Dashboard
+✅ Frontend Deployed
 
----
+✅ Backend Deployed
 
-## 👨‍💻 Author
+✅ Authentication Implemented
 
-Developed as a MERN Stack E-Commerce Project.
+✅ Admin CRUD Implemented
 
-Technology Stack:
-MongoDB • Express.js • React.js • Node.js
+✅ Shopping Cart Implemented
 
-```
-```
+✅ MongoDB Connected
+
+✅ Production Ready
